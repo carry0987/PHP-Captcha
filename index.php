@@ -7,7 +7,7 @@ $captcha_option = array(
     'captcha_image_height' => 60,
     'captcha_image_width' => 250,
     'captcha_letter' => 'bcdfghjkmnpqrstvwxyz23456789',
-    'captcha_font' => 'font/monofont.ttf',
+    'captcha_font' => dirname(__FILE__).'/font/monofont.ttf',
     'captcha_text_color' => '0x142864',
     'captcha_noise_color' => '0x142864',
     'total_character' => 6,
@@ -45,7 +45,7 @@ if (isset($_POST['captcha']) && $_POST['captcha'] !== '') {
     <meta name="author" content="carry0987">
     <meta name="description" content="This program was made by carry0987">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link href="https://www.nehscsa.com/messageboard/favicon.ico" rel="shortcut icon" />
+    <link href="favicon.ico" rel="shortcut icon" />
 </head>
 
 <body>

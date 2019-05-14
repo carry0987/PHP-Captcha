@@ -13,6 +13,10 @@ class SimpleCaptcha
     public function setCaptchaOption($option)
     {
         $this->option = $option;
+        if (file_exists($this->option['captcha_font']) !== true) {
+            $error = 'Could not find the ttf file !';
+            return $error;
+        }
     }
 
     public function checkCaptcha($captcha_code, $submit_code)
