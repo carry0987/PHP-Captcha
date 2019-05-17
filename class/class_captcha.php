@@ -100,7 +100,7 @@ class SimpleCaptcha
         );
         //Show captcha image in the html page
         //Defining the image type to be shown in browser window
-        header('Content-Type: image/png');
+        header('Content-Type: image/jpg');
         //Showing the image
         imagejpeg($captcha_image);
         //Destroying the image instance
