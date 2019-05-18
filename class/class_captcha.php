@@ -21,7 +21,7 @@ class SimpleCaptcha
 
     public function checkCaptcha($captcha_code, $submit_code)
     {
-        if ($this->option['check_sensitive'] === true) {
+        if ($this->option['check_sensitive'] === true || $this->option['check_sensitive'] === 1) {
             $check_result = strcmp($captcha_code, $submit_code);
         } else {
             $check_result = strcasecmp($captcha_code, $submit_code);
