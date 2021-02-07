@@ -31,6 +31,11 @@ class SimpleCaptcha
 
     private function hexToRGB($hex_string)
     {
+        if (preg_match('/#([a-f0-9]{3}){1,2}\b/i', $hex_string) === true) {
+            $hex_string = trim($hex_string, '#');
+        } else {
+            $hex_string = 142864;
+        }
         $integar = hexdec($hex_string);
         $hexresult = array('red' => 0xFF & ($integar >> 0x10), 'green' => 0xFF & ($integar >> 0x8), 'blue' => 0xFF & $integar);
         return $hexresult;
