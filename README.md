@@ -1,6 +1,11 @@
 # PHP-Captcha
 Generate Captcha with normal image format via php
 
+## Installation
+```bash
+composer require carry0987/captcha
+```
+
 ## Usage
 Set option for **`SimpleCaptcha`**:
 ```php
@@ -9,7 +14,7 @@ $captcha_option = array(
     'captcha_image_height' => 60,
     'captcha_image_width' => 250,
     'captcha_letter' => 'bcdfghjkmnpqrstvwxyz23456789',
-    'captcha_font' => dirname(__FILE__).'/font/monofont.ttf',
+    'captcha_font' => dirname(__DIR__).'/font/monofont.ttf',
     'captcha_text_color' => '0x142864',
     'captcha_noise_color' => '0x142864',
     'total_character' => 6,
