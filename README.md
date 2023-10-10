@@ -11,16 +11,16 @@ composer require carry0987/captcha
 Set option for **`SimpleCaptcha`**:
 ```php
 $captcha_option = array(
-    'captcha_code' => '',
-    'captcha_image_height' => 60,
-    'captcha_image_width' => 250,
+    'code' => '',
+    'image_height' => 60,
+    'image_width' => 250,
     'captcha_letter' => 'bcdfghjkmnpqrstvwxyz23456789',
-    'captcha_font' => dirname(__DIR__).'/font/monofont.ttf',
-    'captcha_text_color' => '0x142864',
-    'captcha_noise_color' => '0x142864',
+    'font_file' => dirname(__DIR__).'/font/monofont.ttf',
+    'text_color' => '#142864',
+    'noise_color' => '#142864',
     'total_character' => 6,
-    'random_captcha_dots' => 50,
-    'random_captcha_lines' => 25,
+    'random_dots' => 50,
+    'random_lines' => 25,
     'check_sensitive' => false
 );
 ```
