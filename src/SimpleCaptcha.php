@@ -37,7 +37,7 @@ class SimpleCaptcha
         }
     }
 
-    public function checkCaptcha($captcha_code, $submit_code)
+    public function checkCaptcha(string $captcha_code, string $submit_code)
     {
         if ($this->option['check_sensitive'] === true || $this->option['check_sensitive'] === 1) {
             $check_result = strcmp($captcha_code, $submit_code);
@@ -47,7 +47,7 @@ class SimpleCaptcha
         return (bool) $check_result;
     }
 
-    private function hexToRGB($hex_string)
+    private function hexToRGB(string $hex_string)
     {
         if (preg_match('/#([a-f0-9]{3}){1,2}\b/i', $hex_string) === true) {
             $hex_string = trim($hex_string, '#');
