@@ -50,7 +50,7 @@ class SimpleCaptcha
 
     private function hexToRGB(string $hex_string)
     {
-        if (preg_match('/#([a-f0-9]{3}){1,2}\b/i', $hex_string) === true) {
+        if (preg_match('/#([a-f0-9]{3}){1,2}\b/i', $hex_string) === 1) {
             $hex_string = trim($hex_string, '#');
         } else {
             $hex_string = 142864;
@@ -134,5 +134,16 @@ class SimpleCaptcha
         imagedestroy($image);
 
         return $image;
+    }
+
+    public function getCaptchaBase64($image)
+    {
+        ob_start();
+        imagejpeg($image);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        imagedestroy($image);
+
+        return 'data:image/jpeg;base64,'.base64_encode($contents);
     }
 }
