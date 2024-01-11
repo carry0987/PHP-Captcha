@@ -44,7 +44,8 @@ class SimpleCaptcha
         } else {
             $check_result = strcasecmp($captcha_code, $submit_code);
         }
-        return (bool) $check_result;
+
+        return $check_result === 0;
     }
 
     private function hexToRGB(string $hex_string)
@@ -56,6 +57,7 @@ class SimpleCaptcha
         }
         $integar = hexdec($hex_string);
         $hexresult = array('red' => 0xFF & ($integar >> 0x10), 'green' => 0xFF & ($integar >> 0x8), 'blue' => 0xFF & $integar);
+
         return $hexresult;
     }
 
@@ -121,6 +123,7 @@ class SimpleCaptcha
         );
         $captcha['captcha_image'] = $captcha_image;
         $captcha['code'] = $this->option['code'];
+
         return $captcha;
     }
 
@@ -129,6 +132,7 @@ class SimpleCaptcha
         imagejpeg($image);
         //Destroying the image instance
         imagedestroy($image);
+
         return $image;
     }
 }
